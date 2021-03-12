@@ -72,7 +72,6 @@ public class LineService {
         StationResponse downStationResponse = stationService.getStation(sectionRequest.getDownStationId());
 
         line.addSection(upStationResponse.toStation(), downStationResponse.toStation(), sectionRequest.getDistance());
-        lineRepository.flush();
         return LineResponse.of(line);
     }
 
